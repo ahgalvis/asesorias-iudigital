@@ -1,0 +1,14 @@
+{
+  "name": "asesorias-iudigital",
+  "version": "1.0.0",
+  "description": "Gestión de proyectos de asesorías académicas (IUDigital) - Node.js + MongoDB",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}

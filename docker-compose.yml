@@ -1,0 +1,23 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: asesorias-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    image: ${DOCKERHUB_USER:-tuusuario}/asesorias-iudigital:${APP_VERSION:-latest}
+    container_name: asesorias-app
+    restart: unless-stopped
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017/asesorias
+      - APP_VERSION=${APP_VERSION:-latest}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+
+volumes:
+  mongo-data:

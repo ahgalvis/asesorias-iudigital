@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Asesorías IUDigital</title>
+<style>body{font-family:system-ui;margin:40px;max-width:720px}code{background:#eee;padding:2px 4px}</style></head>
+<body>
+<h1>Asesorías académicas IUDigital</h1>
+<p>Aplicación desplegada automáticamente con Jenkins (CD).</p>
+<p>Estado: <span id="s">consultando…</span></p>
+<h2>Endpoints</h2>
+<ul>
+<li><code>/api/tipos-proyecto</code></li><li><code>/api/clientes</code></li>
+<li><code>/api/universidades</code></li><li><code>/api/etapas</code></li><li><code>/api/proyectos</code></li>
+</ul>
+<script>fetch('/health').then(r=>r.json()).then(d=>{document.getElementById('s').textContent=d.status+' (versión '+d.version+')'})</script>
+</body></html>
